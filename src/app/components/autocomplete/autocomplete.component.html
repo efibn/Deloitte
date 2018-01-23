@@ -1,0 +1,15 @@
+
+
+<input (keydown)="onKeydown($event)" 
+       (input)="onInput($event)" 
+       name="autocomplete" type="text"/>
+       
+<div [style.display]="panelVisible ? 'block' : 'none'" [style.width]="appendTo ? 'auto' : '100%'"
+         [style.max-height]="scrollHeight">
+        <ul>
+            <li *ngFor="let item of list"
+                (click)="selectItem(item)">
+                <span>{{item.name}}</span>
+            </li>
+        </ul>
+</div>
